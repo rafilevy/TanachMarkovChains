@@ -1,12 +1,14 @@
 package DataPreparation;
 
 import Enums.TanachBook;
+import org.json.JSONStringer;
 
 import java.io.*;
 import java.net.URL;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class TanachDataPreparation {
@@ -39,6 +41,12 @@ public class TanachDataPreparation {
         ArrayList<String> lines = new ArrayList<>();
         for (TanachBook book : TanachBook.values()) lines.addAll(Files.readAllLines(book.getFilePath()));
         return lines;
+    }
+
+    public static void saveTransitionMatrix(Map<String, Map<String, Double>> transitionMatrix) throws IOException {
+        String JSON = JSONStringer.valueToString(transitionMatrix);
+        Path outputPath = Paths.get("output", "transitionMatrix.json");
+        Files.writeString(outputPath, JSON);
     }
 
     public static void main(String[] args) throws IOException {
