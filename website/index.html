@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Tanach Verse Generator</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>
+            Tanach Style Verse Generator
+        </h1>
+        <p>
+            The verses are generated using a markov model which has been trained using every verse in Tanach as an input. The model represents the probability of a given word following another in a Tanach verse.
+            This model is then used to generate Tanach style verses.
+        </p>
+        <div class="verse_container">
+            <p id="verse"></p>
+        </div>
+        <div class="description_container">
+            <p>
+                Checkout the code for this project on <a target="_blank" href="https://github.com/rafilevy/TanachMarkovChains">github</a>.
+                <br>
+                This project was made possible with <a target="_blank" href="https://sefaria.org">Sefaria.org</a> - an online library of Jewish texts.
+            </p>
+        </div>
+    </body>
+</html>
