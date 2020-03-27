@@ -1,6 +1,6 @@
-package DataPreparation;
+package TanachMarkovModel.DataPreparation;
 
-import Enums.TanachBook;
+import TanachMarkovModel.Enums.TanachBook;
 import org.json.JSONStringer;
 
 import java.io.*;

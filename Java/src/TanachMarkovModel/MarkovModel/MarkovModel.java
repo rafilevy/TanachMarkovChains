@@ -1,11 +1,11 @@
-package MarkovModel;
-
-import DataPreparation.TanachDataPreparation;
+package TanachMarkovModel.MarkovModel;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+
+import TanachMarkovModel.DataPreparation.TanachDataPreparation;
 
 public class MarkovModel {
 
@@ -59,7 +59,23 @@ public class MarkovModel {
     public static void main(String[] args) throws IOException {
         Map<String, Map<String, Double>> transitionMatrix = generateTransitionMatrix(TanachDataPreparation.getLines());
         int num = 1;
-        if (args.length != 0) num = Integer.parseUnsignedInt(args[0]);
-        for (int i = 0; i<num; i++) System.out.println(generateSentence(transitionMatrix));
+        if (args.length == 1) {
+            if ( args[0].equals( "save" )) {
+                TanachDataPreparation.saveTransitionMatrix(transitionMatrix);
+            } else {
+                num = Integer.parseUnsignedInt(args[0]);
+                for (int i = 0; i<num; i++) System.out.println(generateSentence(transitionMatrix));
+            }
+        } else {
+            if (args[0].equals( "save" )) {
+                TanachDataPreparation.saveTransitionMatrix(transitionMatrix);
+                num = Integer.parseUnsignedInt(args[1]);
+                for (int i = 0; i<num; i++) System.out.println(generateSentence(transitionMatrix));
+            } else if (args[1].equals("save")) {
+                TanachDataPreparation.saveTransitionMatrix(transitionMatrix);
+                num = Integer.parseUnsignedInt(args[0]);
+                for (int i = 0; i<num; i++) System.out.println(generateSentence(transitionMatrix));
+            }
+        }
     }
 }
