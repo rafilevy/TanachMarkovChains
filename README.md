@@ -2,6 +2,8 @@
 
 A program which generates Tanach style verses using markov chains.
 
+Head to [rafilevy.github.io/TanachMarkovChains](https://rafilevy.github.io/TanachMarkovChains/) to see the project in action.
+
 ## Data Preparation
 
 The data for the markov chain is collected from [Sefaria](https://sefaria.org), specifically [Sefaria Export](https://github.com/Sefaria/Sefaria-Export) - a GitHub repo containing raw data for all of Tanach.
